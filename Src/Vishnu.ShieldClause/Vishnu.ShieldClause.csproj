@@ -2,6 +2,11 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <Authors>Vishnuvardhan TG</Authors>
+    <Company />
+    <Product>Shield</Product>
+    <RepositoryType>Guard Shield</RepositoryType>
   </PropertyGroup>
 
 </Project>
