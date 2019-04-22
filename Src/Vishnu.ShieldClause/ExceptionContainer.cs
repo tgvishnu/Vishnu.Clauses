@@ -101,5 +101,37 @@ namespace Vishnu.ShieldClause
                 throw new ArgumentOutOfRangeException(StringUtils.FormatParameter(parameterName), StringUtils.FormatMessage(message));
             }
         }
+
+        /// <summary>
+        /// Raise <see cref="NotSupportedException"/> null exception when condition fails
+        /// </summary>
+        /// <typeparam name="T">param type</typeparam>
+        /// <param name="when">predicate function</param>
+        /// <param name="input">input</param>
+        /// <param name="parameterName">parameter name</param>
+        /// <param name="message">custom message</param>
+        public void NotSupportedException(bool when, string message = null)
+        {
+            if (when)
+            {
+                throw new NotSupportedException(StringUtils.FormatMessage(message));
+            }
+        }
+
+        /// <summary>
+        /// Raise <see cref="TimeoutException"/> null exception when condition fails
+        /// </summary>
+        /// <typeparam name="T">param type</typeparam>
+        /// <param name="when">predicate function</param>
+        /// <param name="input">input</param>
+        /// <param name="parameterName">parameter name</param>
+        /// <param name="message">custom message</param>
+        public void TimeoutException(bool when, string message = null)
+        {
+            if (when)
+            {
+                throw new TimeoutException(StringUtils.FormatMessage(message));
+            }
+        }
     }
 }
