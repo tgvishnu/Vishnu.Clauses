@@ -1,3 +1,4 @@
+NuGet: [Vishnu.ShieldClause](https://www.nuget.org/packages/Vishnu.ShieldClause)
 # Vishnu.ShieldClause
 A simple package with extensible shield clauses
 ## Give a Star! :star:
