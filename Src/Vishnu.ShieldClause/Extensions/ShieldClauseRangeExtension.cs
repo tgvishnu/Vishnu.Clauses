@@ -7,6 +7,72 @@ namespace Vishnu.ShieldClause
     public static class ShieldClauseRangeExtension
     {
         /// <summary>
+        /// Throws <see cref="ArgumentOutOfRangeException"/> when the value is less than limit
+        /// </summary>
+        /// <typeparam name="T">input type</typeparam>
+        /// <param name="shieldClause">shield clause</param>
+        /// <param name="input">input</param>
+        /// <param name="limit">limit</param>
+        /// <param name="parameterName">parameter range</param>
+        public static void LesserThan<T>(this IShieldClause shieldClause, T input, T limit, string parameterName) where T : IComparable<T>
+        {
+            if (input.CompareTo(limit) >= 0)
+            {
+                throw new ArgumentOutOfRangeException(StringUtils.FormatParameter(parameterName));
+            }
+        }
+
+        /// <summary>
+        /// Throws <see cref="ArgumentOutOfRangeException"/> when the value is less than limit
+        /// </summary>
+        /// <typeparam name="T">input type</typeparam>
+        /// <param name="shieldClause">shield clause</param>
+        /// <param name="input">input</param>
+        /// <param name="limit">limit</param>
+        /// <param name="parameterName">parameter range</param>
+        /// <param name="message">custom message</param>
+        public static void LesserThan<T>(this IShieldClause shieldClause, T input, T limit, string parameterName, string message) where T : IComparable<T>
+        {
+            if (input.CompareTo(limit) >= 0)
+            {
+                throw new ArgumentOutOfRangeException(StringUtils.FormatParameter(parameterName), StringUtils.FormatMessage(message));
+            }
+        }
+
+        /// <summary>
+        /// Throws <see cref="ArgumentOutOfRangeException"/> when the value is greater than limit
+        /// </summary>
+        /// <typeparam name="T">input type</typeparam>
+        /// <param name="shieldClause">shield clause</param>
+        /// <param name="input">input</param>
+        /// <param name="limit">limit</param>
+        /// <param name="parameterName">parameter range</param>
+        public static void GreaterThan<T>(this IShieldClause shieldClause, T input, T limit, string parameterName) where T : IComparable<T>
+        {
+            if(input.CompareTo(limit) <= 0)
+            {
+                throw new ArgumentOutOfRangeException(StringUtils.FormatParameter(parameterName));
+            }
+        }
+
+        /// <summary>
+        /// Throws <see cref="ArgumentOutOfRangeException"/> when the value is greater than limit
+        /// </summary>
+        /// <typeparam name="T">input type</typeparam>
+        /// <param name="shieldClause">shield clause</param>
+        /// <param name="input">input</param>
+        /// <param name="limit">limit</param>
+        /// <param name="parameterName">parameter range</param>
+        /// <param name="message">custom message</param>
+        public static void GreaterThan<T>(this IShieldClause shieldClause, T input, T limit, string parameterName, string message) where T : IComparable<T>
+        {
+            if (input.CompareTo(limit) <= 0)
+            {
+                throw new ArgumentOutOfRangeException(StringUtils.FormatParameter(parameterName), StringUtils.FormatMessage(message));
+            }
+        }
+
+        /// <summary>
         /// Throws <see cref="ArgumentException"/> if <see cref="from"/> is greater than <see cref="to"/>
         /// Throws <see cref="ArgumentOutOfRangeException"/> if <see cref="input"/> value is not with in the specified range
         /// </summary>
