@@ -9,13 +9,12 @@ namespace Vishnu.ShieldClause
         /// <summary>
         /// Gets new instance of the Shield Clause
         /// </summary>
-        public static IShieldClause Against
-        {
-            get
-            {
-                return new Shield();
-            }
-        }
+        public static IShieldClause Against { get => new Shield(); }
+
+        /// <summary>
+        /// Gets new instance of <see cref="ExceptionContainer"/>
+        /// </summary>
+        public static ExceptionContainer Throw { get => new ExceptionContainer(); }
 
         /// <summary>
         /// Prevents creation of new instance of the  <see cref="Shield"/> class.
