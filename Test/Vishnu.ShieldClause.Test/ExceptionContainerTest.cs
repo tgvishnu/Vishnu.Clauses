@@ -12,11 +12,13 @@ namespace Vishnu.ShieldClause.Test
         public void ThrowException()
         {
             string value = "";
-            Assert.Throws<ArgumentException>(() =>  Shield.Throw.ArgumentException(true, "param1"));
-            Assert.Throws<ArgumentException>(() => Shield.Throw.ArgumentException((true || true), "param1"));
-            Assert.Throws<ArgumentException>(() => Shield.Throw.ArgumentException<string>((input) => { return true; }, "",  "param1"));
-            Assert.Throws<ArgumentNullException>(() => Shield.Throw.ArgumentNullException((value == string.Empty || value == null), "param1"));
-            Assert.Throws<ArgumentNullException>(() => Shield.Throw.ArugmentNullException<string>((input) => { return input == null ? true : false; }, null, "param1"));
+            Assert.Throws<ArgumentException>(() =>  Shield.Throws.ArgumentException(true, "param1"));
+            Assert.Throws<ArgumentException>(() => Shield.Throws.ArgumentException((true || true), "param1"));
+            Assert.Throws<ArgumentException>(() => Shield.Throws.ArgumentException<string>((input) => { return true; }, "",  "param1"));
+            Assert.Throws<ArgumentNullException>(() => Shield.Throws.ArgumentNullException((value == string.Empty || value == null), "param1"));
+            Assert.Throws<ArgumentNullException>(() => Shield.Throws.ArugmentNullException<string>((input) => { return input == null ? true : false; }, null, "param1"));
+            Assert.Throws<TimeoutException>(() => Shield.Throws.TimeoutException(true, "exception occured"));
+            Assert.Throws<NotSupportedException>(() => Shield.Throws.NotSupportedException(true, "not supported"));
         }
     }
 }

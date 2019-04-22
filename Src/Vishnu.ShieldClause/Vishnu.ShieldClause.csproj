@@ -4,9 +4,14 @@
     <TargetFramework>netcoreapp2.2</TargetFramework>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <Authors>Vishnuvardhan TG</Authors>
-    <Company />
+    <Company>Self</Company>
     <Product>Shield</Product>
     <RepositoryType>Guard Shield</RepositoryType>
+    <Description>Shield clauses for validating and raising exceptions.</Description>
+    <PackageTags>Guard Shields Exception</PackageTags>
+    <Version>1.0.1</Version>
+    <PackageReleaseNotes>Description updated</PackageReleaseNotes>
+    <PackageProjectUrl>https://github.com/tgvishnu/Vishnu.ShieldClause</PackageProjectUrl>
   </PropertyGroup>
 
 </Project>

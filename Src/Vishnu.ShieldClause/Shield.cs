@@ -14,7 +14,7 @@ namespace Vishnu.ShieldClause
         /// <summary>
         /// Gets new instance of <see cref="ExceptionContainer"/>
         /// </summary>
-        public static ExceptionContainer Throw { get => new ExceptionContainer(); }
+        public static ExceptionContainer Throws { get => new ExceptionContainer(); }
 
         /// <summary>
         /// Prevents creation of new instance of the  <see cref="Shield"/> class.
