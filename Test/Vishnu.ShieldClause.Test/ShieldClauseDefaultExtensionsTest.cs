@@ -18,7 +18,7 @@ namespace Vishnu.ShieldClause.Test
             Assert.Throws<ArgumentException>(() => Shield.Against.Zero(intValue, "param1"));
             Assert.Throws<ArgumentException>(() => Shield.Against.Zero(longValue, "param1"));
             Assert.Throws<ArgumentException>(() => Shield.Against.Zero(decimalValue, "param1"));
-            Assert.Throws<ArgumentNullException>(() => Shield.Against.Default<Guid>(guidValue, "param1"));
+            Assert.Throws<ArgumentException>(() => Shield.Against.Default<Guid>(guidValue, "param1"));
         }
 
         [Test]

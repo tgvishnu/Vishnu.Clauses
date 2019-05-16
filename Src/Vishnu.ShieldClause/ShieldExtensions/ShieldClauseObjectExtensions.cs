@@ -66,7 +66,10 @@ namespace Vishnu.ShieldClause
         /// <exception cref="ArgumentNullException"></exception>
         public static void Null<T>(this IShieldClause shieldClause, T input, string parameterName) where T : class
         {
-            Shield.Against.Null(input, parameterName);
+            if (input == default(T))
+            {
+                throw new ArgumentNullException(StringUtils.FormatParameter(parameterName));
+            }
         }
 
         /// <summary>
@@ -80,7 +83,10 @@ namespace Vishnu.ShieldClause
         /// <param name="message">custom message</param>
         public static void Null<T>(this IShieldClause shieldClause, T input, string parameterName, string message) where T : class
         {
-            Shield.Against.Null(input, parameterName, message);
+            if (input == default(T))
+            {
+                throw new ArgumentNullException(StringUtils.FormatParameter(parameterName), StringUtils.FormatMessage(message));
+            }
         }
     }
 }

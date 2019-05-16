@@ -1,17 +1,15 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.2</TargetFramework>
-    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Version>1.0.3</Version>
     <Authors>Vishnuvardhan TG</Authors>
     <Company>Self</Company>
-    <Product>Shield</Product>
-    <RepositoryType>Guard Shield</RepositoryType>
     <Description>Shield clauses for validating and raising exceptions.</Description>
-    <PackageTags>Guard Shields Exception</PackageTags>
-    <Version>1.0.2</Version>
-    <PackageReleaseNotes>Description updated</PackageReleaseNotes>
     <PackageProjectUrl>https://github.com/tgvishnu/Vishnu.ShieldClause</PackageProjectUrl>
+    <RepositoryType>Guard Shield</RepositoryType>
+    <PackageTags>Guard Shields Exception</PackageTags>
+    <PackageReleaseNotes>Converted to .Net Standard 2.0</PackageReleaseNotes>
   </PropertyGroup>
 
 </Project>

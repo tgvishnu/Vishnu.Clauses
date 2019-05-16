@@ -8,10 +8,13 @@ namespace Vishnu.ShieldClause.Test
     [TestFixture]
     public class ShieldClauseObjectExtensionsTest
     {
+
         [TestCase(null, "param1")]
         public void Null_ThrowsException(object value, string parameter)
         {
+            TestClass ts = null;
             Assert.Throws<ArgumentNullException>(() =>  Shield.Against.Null(value, parameter));
+            Assert.Throws<ArgumentNullException>(() => Shield.Against.Null<TestClass>(ts, parameter));
         }
 
         [TestCase("hello", "param1")]
@@ -19,5 +22,10 @@ namespace Vishnu.ShieldClause.Test
         {
             Assert.DoesNotThrow(() => Shield.Against.Null(value, parameter));
         }
+    }
+
+    public class TestClass
+    {
+
     }
 }
