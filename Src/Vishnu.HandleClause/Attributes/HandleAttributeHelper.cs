@@ -8,7 +8,7 @@ namespace Vishnu.HandleClause
 {
     internal class HandleAttributeHelper
     {
-        internal void Call(ActionDelegate action, Action<Exception> exceptionHandledAction = null)
+        internal void Call(Action action, Action<Exception> exceptionHandledAction = null)
         {
             var exceptions = this.GetExceptionsFromAction(action.Method.DeclaringType, action.Method);
             try
@@ -31,7 +31,7 @@ namespace Vishnu.HandleClause
             }
         }
 
-        internal void Call<TInput>(ActionDelegate<TInput> action, TInput input, Action<Exception> exceptionHandledAction = null)
+        internal void Call<TInput>(Action<TInput> action, TInput input, Action<Exception> exceptionHandledAction = null)
         {
             var exceptions = this.GetExceptionsFromAction(action.Method.DeclaringType, action.Method);
             try
@@ -54,7 +54,7 @@ namespace Vishnu.HandleClause
             }
         }
 
-        internal TResult Call<TResult>(FuncDelegate<TResult> action, Action<Exception> exceptionHandledAction = null)
+        internal TResult Call<TResult>(Func<TResult> action, Action<Exception> exceptionHandledAction = null)
         {
             var exceptions = this.GetExceptionsFromAction(action.Method.DeclaringType, action.Method);
             try
@@ -79,7 +79,7 @@ namespace Vishnu.HandleClause
             }
         }
 
-        internal TResult Call<TInput, TResult>(FuncDelegate<TInput, TResult> action, TInput input, Action<Exception> exceptionHandledAction = null)
+        internal TResult Call<TInput, TResult>(Func<TInput, TResult> action, TInput input, Action<Exception> exceptionHandledAction = null)
         {
             var exceptions = this.GetExceptionsFromAction(action.Method.DeclaringType, action.Method);
             try
@@ -104,7 +104,7 @@ namespace Vishnu.HandleClause
             }
         }
 
-        internal TResult Call<TInput1, TInput2, TResult>(FuncDelegate<TInput1, TInput2, TResult> action, TInput1 input1, TInput2 input2, Action<Exception> exceptionHandledAction = null)
+        internal TResult Call<TInput1, TInput2, TResult>(Func<TInput1, TInput2, TResult> action, TInput1 input1, TInput2 input2, Action<Exception> exceptionHandledAction = null)
         {
             var exceptions = this.GetExceptionsFromAction(action.Method.DeclaringType, action.Method);
             try
@@ -129,7 +129,7 @@ namespace Vishnu.HandleClause
             }
         }
 
-        internal TResult Call<TInput1, TInput2, TInput3, TResult>(FuncDelegate<TInput1, TInput2, TInput3, TResult> action, TInput1 input1, TInput2 input2, TInput3 input3, Action<Exception> exceptionHandledAction = null)
+        internal TResult Call<TInput1, TInput2, TInput3, TResult>(Func<TInput1, TInput2, TInput3, TResult> action, TInput1 input1, TInput2 input2, TInput3 input3, Action<Exception> exceptionHandledAction = null)
         {
             var exceptions = this.GetExceptionsFromAction(action.Method.DeclaringType, action.Method);
             try
