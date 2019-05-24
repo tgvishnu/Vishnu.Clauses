@@ -2,14 +2,14 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Version>1.0.3</Version>
+    <Version>1.0.4</Version>
     <Authors>Vishnuvardhan TG</Authors>
     <Company>Self</Company>
     <Description>Shield clauses for validating and raising exceptions.</Description>
-    <PackageProjectUrl>https://github.com/tgvishnu/Vishnu.ShieldClause</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/tgvishnu/Vishnu.Clauses</PackageProjectUrl>
     <RepositoryType>Guard Shield</RepositoryType>
-    <PackageTags>Guard Shields Exception</PackageTags>
-    <PackageReleaseNotes>Converted to .Net Standard 2.0</PackageReleaseNotes>
+    <PackageTags>Guard Shields Exception Beautiful Code</PackageTags>
+    <PackageReleaseNotes>Project repository reolocated.</PackageReleaseNotes>
   </PropertyGroup>
 
 </Project>
