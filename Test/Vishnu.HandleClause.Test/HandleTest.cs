@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using Vishnu.HandleClause;
 
-namespace Vishnu.ShieldClause.Test
+namespace Vishnu.HandleClause.Test
 {
     [TestFixture]
     public class HandleTest
@@ -164,6 +164,7 @@ namespace Vishnu.ShieldClause.Test
             throw new ArgumentNullException();
         }
 
+
         protected void IndexOutRaise()
         {
             throw new IndexOutOfRangeException();
@@ -199,6 +200,12 @@ namespace Vishnu.ShieldClause.Test
 
     public class Temp : TempBase
     {
+        [Handle(typeof(Temp))]
+        public void InvalidExceptionType()
+        {
+
+        }
+
         public void MethodRaiseArgumentNullException()
         {
             base.RaiseArgumentNullException();

@@ -5,22 +5,41 @@ using System.Linq;
 
 namespace Vishnu.HandleClause
 {
+    /// <summary>
+    /// Exception delegate holder
+    /// </summary>
     internal class HandleExceptionHolder
     {
-        public IList<ExceptionDelegage> Exceptions;
+        /// <summary>
+        /// Gets list of <see cref="ExceptionDelegate"/>
+        /// </summary>
+        public IList<ExceptionDelegate> Exceptions { get; }
 
-        internal HandleExceptionHolder(ExceptionDelegage exceptionDelegage)
+        /// <summary>
+        /// Creates new instance of <see cref="HandleExceptionHolder"/> class.
+        /// </summary>
+        /// <param name="exceptionDelegate"><see cref="ExceptionDelegate"/></param>
+        internal HandleExceptionHolder(ExceptionDelegate exceptionDelegate)
         {
-            this.Exceptions = new List<ExceptionDelegage>();
-            this.Exceptions.Add(exceptionDelegage);
+            this.Exceptions = new List<ExceptionDelegate>();
+            this.Exceptions.Add(exceptionDelegate);
         }
 
-        internal HandleExceptionHolder(IList<ExceptionDelegage> exceptionDelegages)
+        /// <summary>
+        /// Creates new instance of <see cref="HandleExceptionHolder"/> class.
+        /// </summary>
+        /// <param name="exceptionDelegates">Collection of <see cref="ExceptionDelegate"/></param>
+        internal HandleExceptionHolder(IList<ExceptionDelegate> exceptionDelegates)
         {
-            this.Exceptions = new List<ExceptionDelegage>();
-            this.Exceptions = exceptionDelegages;
+            this.Exceptions = new List<ExceptionDelegate>();
+            this.Exceptions = exceptionDelegates;
         }
 
+        /// <summary>
+        /// Gets first or default exception.
+        /// </summary>
+        /// <param name="ex">typeof <see cref="Exception"/></param>
+        /// <returns><see cref="Exception"/> or null</returns>
         internal Exception FirstOrDefault(Exception ex)
         {
            return this.Exceptions.Select(e => e(ex)).FirstOrDefault(e => e != null);
