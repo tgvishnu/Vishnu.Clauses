@@ -37,17 +37,21 @@ A simple package with extensible shield clauses.
     }
 ```
 >## Supported classes
-- ** Shield.Against.NullOrEmpty**
-- ** Shield.Against.NullOrWhiteSpace**
-- ** Shield.Against.OutOfRange**
-- ** Shield.Against.LesserThan<T>**
-- ** Shield.Against.GreaterThan<T>**
-- ** Shield.Against.IsTypeOf<T>**
-- ** Shield.Against.NullOrEmpty<T>**
-- ** Shield.Throws.ArgumentException**
-- ** Shield.Throws.ArgumentNullException**
-- ** Shield.Throws.TimeoutException**
-- ** Shield.Throws.NotSupportedException**
+
+```c#
+- Shield.Against.NullOrEmpty
+- Shield.Against.NullOrWhiteSpace
+- Shield.Against.OutOfRange
+- Shield.Against.LesserThan<T>
+- Shield.Against.GreaterThan<T>
+- Shield.Against.IsTypeOf<T>
+- Shield.Against.NullOrEmpty<T>
+- Shield.Throws.ArgumentException
+- Shield.Throws.ArgumentNullException
+- Shield.Throws.TimeoutException
+- Shield.Throws.NotSupportedException
+
+```
 
 >## Extending with your own Guard Clauses
 
@@ -82,7 +86,7 @@ A simple package with extensible shield clauses.
    - Inline
 ## a. Handle Attribute
 > ## Description
-     Handle attribute, supresses or handles the exceptions raised by any method.  Optionally allows to invoke other action if any exception is handled or supressed.  Handle attribute allows inheritance.  
+     Attribute Handle, supresses or handles the exceptions raised by any method.  Optionally allows to invoke other action if any exception is handled or supressed.  Handle attribute allows inheritance.  
 
 > ## Usage
 
