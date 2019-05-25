@@ -1,9 +1,19 @@
-NuGet: [Vishnu.ShieldClause](https://www.nuget.org/packages/Vishnu.ShieldClause)
-# Vishnu.ShieldClause
-A simple package with extensible shield clauses
+# Vishnu.Clause
+
+This package contains
+
+- ShieldClause (NuGet: [Vishnu.ShieldClause](https://www.nuget.org/packages/Vishnu.ShieldClause))
+   > A simple package with extensible shield clauses
+- HandleClause (NuGet :)
+   > A package for handling exceptions based on Attributes and Inline
+
 ## Give a Star! :star:
 If you like or are using this project please give it a star. Thanks!
-## Usage
+
+# 1. Vishnu.ShieldClause [ NuGet: [Vishnu.ShieldClause](https://www.nuget.org/packages/Vishnu.ShieldClause) ]
+A simple package with extensible shield clauses. 
+
+>## Usage
 
 ```c#
     public void ValidateContent(User user, string input)
@@ -26,7 +36,7 @@ If you like or are using this project please give it a star. Thanks!
         }
     }
 ```
-## Supported classes
+>## Supported classes
 - ** Shield.Against.NullOrEmpty**
 - ** Shield.Against.NullOrWhiteSpace**
 - ** Shield.Against.OutOfRange**
@@ -39,7 +49,7 @@ If you like or are using this project please give it a star. Thanks!
 - ** Shield.Throws.TimeoutException**
 - ** Shield.Throws.NotSupportedException**
 
-## Extending with your own Guard Clauses
+>## Extending with your own Guard Clauses
 
 ```c#
 
@@ -66,7 +76,19 @@ If you like or are using this project please give it a star. Thanks!
      }
     
 ```
+# 2. Vishnu.HandleClause [ NuGet: [Vishnu.HandleClause]]
+   A package for handling exception and invokes specific action based on the exception
+   - Attribute
+   - Inline
+## a. Attribute based : Handle
+> ## Description
+> ## Usage
+> ## Supported Actions
 
+## b. Inline
+> ## Description
+> ## Usage
+> ## Supported Actions
 ## References
 
     
