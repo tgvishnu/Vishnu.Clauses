@@ -10,5 +10,5 @@ namespace Vishnu.HandleClause
     /// </summary>
     /// <param name="ex"><see cref="Exception"/></param>
     /// <returns><see cref="Exception"/> or null</returns>
-    internal delegate Exception ExceptionDelegate(Exception ex);
+    public delegate Exception ExceptionDelegate(Exception ex);
 }

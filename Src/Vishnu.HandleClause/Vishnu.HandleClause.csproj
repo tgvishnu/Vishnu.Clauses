@@ -6,11 +6,13 @@
     <Authors>Vishnuvardhan TG</Authors>
     <Description>This package provides
 1. Attribute based exception handling on actions 
-2. Inline Exception handling on actions</Description>
+2. Inline Exception handling on actions
+3. Exception chain</Description>
     <PackageProjectUrl>https://github.com/tgvishnu/Vishnu.Clauses</PackageProjectUrl>
     <RepositoryUrl>https://github.com/tgvishnu/Vishnu.Clauses</RepositoryUrl>
-    <PackageTags>Handle Attributes ExceptionAttribute ExceptionHandling Exception</PackageTags>
+    <PackageTags>Handle Attributes ExceptionAttribute ExceptionHandling Exception ExceptionChain Exception builder</PackageTags>
     <PackageReleaseNotes>First release of attributes based on inline exception mechanism.</PackageReleaseNotes>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
 </Project>

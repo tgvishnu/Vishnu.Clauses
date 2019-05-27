@@ -7,7 +7,8 @@ namespace Vishnu.HandleClause
 {
     /// <summary>
     /// Class responsible for invoking the specific actions and handles the exceptions 
-    /// declared in Handle attribute <see cref="HandleAttribute"/> and also exceptions in Inline.
+    /// declared in Handle attribute <see cref="HandleAttribute"/> and also exceptions in Inline or 
+    /// using handle builder
     /// </summary>
     public static partial class Handle
     {
