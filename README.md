@@ -4,8 +4,8 @@ This package contains
 
 - ShieldClause (NuGet: [Vishnu.ShieldClause](https://www.nuget.org/packages/Vishnu.ShieldClause))
    > A simple package with extensible shield clauses
-- HandleClause (NuGet :)
-   > A package for handling exceptions based on Attributes and Inline
+- HandleClause (NuGet : [Vishnu.HandleClause] https://www.nuget.org/packages/Vishnu.HandleClause))
+   > A package for handling exceptions based on Attributes, Inline and Exception Chaining
 
 ## Give a Star! :star:
 If you like or are using this project please give it a star. Thanks!
@@ -80,10 +80,13 @@ A simple package with extensible shield clauses.
      }
     
 ```
-# 2. Vishnu.HandleClause [ NuGet: [Vishnu.HandleClause]]
+# 2. Vishnu.HandleClause [ NuGet: [Vishnu.ShieldClause](https://www.nuget.org/packages/Vishnu.HandleClause) ]
+
    A package for handling exception and invokes specific action based on the exception
    - Handle Attribute
    - Inline
+   - Exception chaining
+   
 ## a. Handle Attribute
 > ## Description
      Attribute Handle, supresses or handles the exceptions raised by any method.  Optionally allows to invoke other action if any exception is handled or supressed.  Handle attribute allows inheritance.  
@@ -203,6 +206,79 @@ using Vishnu.HandleClause;
 - TResult result = Handle.Inline<TException, TInput, TResult>(Func<TInput, TResult> action, TInput input, Action<Exception> exceptionHanldedAction = null) where TException : Exception
 - TResult result = Handle.Inline<TException, TInput1, TInput2, TResult>(Func<TInput1, TInput2, TResult> action, TInput1 input1, TInput2 input2, Action<Exception> exceptionHanldedAction = null) where TException : Exception
 - TResult result = Handle.Inline<TException, TInput1, TInput2, TInput3, TResult>(Func<TInput1, TInput2, TInput3, TResult> action, TInput1 input1, TInput2 input2, TInput3 input3, Action<Exception> exceptionHanldedAction = null) where TException : Exception
+
+```
+
+## c. Exception Chaining
+
+> ## Description
+   Exception chaining allows to handle multiple exception.  Optionally, it allows to invoke an action if the exception is handled.  
+
+> ## Usage
+1. Declare namespace
+
+```c#
+
+using Vishnu.HandleClause;
+
+```
+2. Use 'Case' to handle specific exception and we can chain multiple exception by using 'Or'.  Finally call Execute to invoke the specific action.  Optionally exception handled call back can also be passed.
+
+```c#
+    public class Boo
+    {
+        public void Update()
+        {
+            .....
+        }
+
+        public int Update(string value)
+        {
+            ....
+            return 0;
+        }
+    }
+    
+   public void Test()
+   {
+   
+        int result =  Handle
+                         .Case<ArgumentNullException>()    // exception
+                         .Or<CustomException>()            // chain exception using Or
+                         .Or<ArgumentException>()         
+                         .UseSync()                        // only synch methods allowed
+                         .Execute<string int>(new Boo().Update, "test");  // call the method
+       
+       // Handles ArgumentException and also invokes ExceptionHandledCallback if exception is handled.
+       int result =  Handle
+                         .Case<ArgumentNullException>()    // exception
+                         .UseSync()                        // only synch methods allowed
+                         .Execute(new Boo().Update, ExceptionHandledCallback);  // call the method
+      }
+    
+```
+> ## Supported Actions
+
+Syntax :
+     [] - Optional 
+- Handle
+      .Case&lt;Exception&gt;
+      [.Or&lt;Exception&gt;
+      .Or&lt;Exception&gt;
+      ....]
+      .UseSync()
+      .Execute[&lt;Parameters, ReturnValue&gt;](action, [callback])
+
+Overloaded execute methods
+
+```c#
+
+- Execute<TInput>(Action<TInput> action, TInput input, Action<Exception> exceptionHanldedAction = null)
+- Execute(Action action, Action<Exception> exceptionHanldedAction = null)
+- var result = Execute<TResult>(Func<TResult> action, Action<Exception> exceptionHanldedAction = null)
+- var result = Execute<TInput, TResult>(Func<TInput, TResult> action, TInput input, Action<Exception> exceptionHanldedAction = null)
+- var result =  Execute<TInput1, TInput2, TResult>(Func<TInput1, TInput2, TResult> action, TInput1 input1, TInput2 input2, Action<Exception> exceptionHanldedAction = null)
+- var result = Execute<TInput1, TInput2, TInput3, TResult>(Func<TInput1, TInput2, TInput3, TResult> action, TInput1 input1, TInput2 input2, TInput3 input3, Action<Exception> exceptionHanldedAction = null)
 
 ```
 
