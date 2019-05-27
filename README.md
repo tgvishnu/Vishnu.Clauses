@@ -4,7 +4,7 @@ This package contains
 
 - ShieldClause (NuGet: [Vishnu.ShieldClause](https://www.nuget.org/packages/Vishnu.ShieldClause))
    > A simple package with extensible shield clauses
-- HandleClause (NuGet : [Vishnu.HandleClause] https://www.nuget.org/packages/Vishnu.HandleClause))
+- HandleClause (NuGet : [Vishnu.HandleClause](https://www.nuget.org/packages/Vishnu.HandleClause))
    > A package for handling exceptions based on Attributes, Inline and Exception Chaining
 
 ## Give a Star! :star:
