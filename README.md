@@ -80,7 +80,7 @@ A simple package with extensible shield clauses.
      }
     
 ```
-# 2. Vishnu.HandleClause [ NuGet: [Vishnu.ShieldClause](https://www.nuget.org/packages/Vishnu.HandleClause) ]
+# 2. Vishnu.HandleClause [ NuGet: [Vishnu.HandleClause](https://www.nuget.org/packages/Vishnu.HandleClause) ]
 
    A package for handling exception and invokes specific action based on the exception
    - Handle Attribute
